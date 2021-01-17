@@ -31,5 +31,3 @@ def roman_to_arabic(roman_num):
 
     return arabic_num
 
-    # testing
-print (roman_to_arabic("MDCCCCXIX"))
