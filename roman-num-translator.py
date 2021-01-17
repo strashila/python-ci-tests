@@ -30,3 +30,6 @@ def roman_to_arabic(roman_num):
         arabic_num += regular_char_dict[roman_char]
 
     return arabic_num
+
+    # testing
+print (roman_to_arabic("MDCCCCXIX"))
