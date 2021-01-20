@@ -36,6 +36,4 @@ def arabic-to-roman(arabic_num):
     return roman_num
 
 
-# some changes pushet to code on gitfub
-
-# now we're pushing some changes to github again
+# removed all stupid comments
