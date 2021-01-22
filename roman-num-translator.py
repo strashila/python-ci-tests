@@ -20,7 +20,7 @@ def roman_to_arabic(roman_num):
         "D": 500,
         "M": 1000
     }
-    
+
     for key in special_char_dict:
         if key in roman_num:
             arabic_num += special_char_dict[key]
@@ -31,4 +31,8 @@ def roman_to_arabic(roman_num):
 
     return arabic_num
 
+
+
 # removed comments and placeholder for arabic to roman func
+
+print(roman_to_arabic("MMVIII"))
