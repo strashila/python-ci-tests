@@ -33,4 +33,7 @@ def roman_to_arabic(roman_num):
 
 
 # removed comments and placeholder for arabic to roman func
+# added print statement
+
+print(roman_to_arabic("MMDCD"))
 
