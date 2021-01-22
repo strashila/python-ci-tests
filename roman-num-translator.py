@@ -31,9 +31,4 @@ def roman_to_arabic(roman_num):
 
     return arabic_num
 
-# placeholder for arabic-to-roamn func
-def arabic-to-roman(arabic_num):
-    return roman_num
-
-
-# removed all stupid comments
+# removed comments and placeholder for arabic to roman func
