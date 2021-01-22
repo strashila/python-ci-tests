@@ -5,11 +5,11 @@ def roman_to_arabic(roman_num):
     special_char_dict = {
         "IV": 4,
         "XL": 40,
-        "CD": 400,     
+        "CD": 400,
         "IX": 9,
         "XC": 90,
         "CM": 900
-    }   
+    }
 
     regular_char_dict = {
         "I": 1,
