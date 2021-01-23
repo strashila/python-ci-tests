@@ -2,6 +2,7 @@
 
 import roman_num_translator
 
+
 class TestRomanNumTranslator:
     def test_16(self):
         assert 16 == roman_num_translator.roman_to_arabic("XVI")
