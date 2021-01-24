@@ -1,4 +1,4 @@
-# Function that returns arabic number for roman number input
+# Function that returns arabic number for roman number string input
 
 def roman_to_arabic(roman_num):
     arabic_num = 0
@@ -31,6 +31,3 @@ def roman_to_arabic(roman_num):
 
     return arabic_num
 
-
-# removed comments and placeholder for arabic to roman func
-# added print statement
