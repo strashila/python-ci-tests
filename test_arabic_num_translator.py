@@ -9,3 +9,9 @@ class TestArabicToRomanTranslator:
 
     def test_2021(self):
         assert "MMXXI" == arabic_num_translator.arabic_to_roman(2021)
+    
+    def test_1985(self):
+        assert "MCMLXXXV" == arabic_num_translator.arabic_to_roman(1985)
+
+
+    
