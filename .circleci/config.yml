@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.8.5
+      - image: rappdw/docker-java-python
 
     working_directory: ~/repo
 
@@ -24,3 +24,17 @@ jobs:
             . venv/bin/activate
             flake8 --exclude=venv*,.git,__pycache__,venv,roman_venv --statistics
             pytest -v
+
+
+      # Step 4: run BD Detect
+      - run:
+          name: run detect
+          command: |
+            - bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url="https://poc39.blackduck.synopsys.com" \
+            --blackduck.api.token="YjNkY2M5MTEtYWMzYS00ODZiLThhYzAtNDM5ODNmY2IxOTNjOjZjYzM1ZmUxLTI1MDQtNGZiMC04MzY0LTgzNTg4MDcxNGMwNw==" \
+            --blackduck.trust.cert=true \
+            --logging.level.detect=DEBUG \
+            --detect.cleanup=false \
+            --detect.project.name=alex_gitlab_ci_tests_3 \
+            --detect.project.version.name=6.0
+              
