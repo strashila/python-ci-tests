@@ -35,6 +35,6 @@ jobs:
             --blackduck.trust.cert=true \
             --logging.level.detect=DEBUG \
             --detect.cleanup=false \
-            --detect.project.name=alex_gitlab_ci_tests_3 \
+            --detect.project.name=alex_cicd_tests \
             --detect.project.version.name=circleci1
               
