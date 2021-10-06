@@ -30,7 +30,7 @@ jobs:
       - run:
           name: run detect
           command: |
-            - bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url="https://poc39.blackduck.synopsys.com" \
+            bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url="https://poc39.blackduck.synopsys.com" \
             --blackduck.api.token="YjNkY2M5MTEtYWMzYS00ODZiLThhYzAtNDM5ODNmY2IxOTNjOjZjYzM1ZmUxLTI1MDQtNGZiMC04MzY0LTgzNTg4MDcxNGMwNw==" \
             --blackduck.trust.cert=true \
             --logging.level.detect=DEBUG \
