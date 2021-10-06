@@ -36,5 +36,5 @@ jobs:
             --logging.level.detect=DEBUG \
             --detect.cleanup=false \
             --detect.project.name=alex_gitlab_ci_tests_3 \
-            --detect.project.version.name=6.0
+            --detect.project.version.name=circleci1
               
