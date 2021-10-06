@@ -30,8 +30,8 @@ jobs:
       - run:
           name: run detect
           command: |
-            bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url="${HUB_URL}" \
-            --blackduck.api.token="${HUB_TOKEN}"\
+            bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=$HUB_URL \
+            --blackduck.api.token=$HUB_TOKEN \
             --blackduck.trust.cert=true \
             --logging.level.detect=DEBUG \
             --detect.cleanup=false \
