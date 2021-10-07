@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: rappdw/docker-java-python
+      - image: circleci/python:3.7
 
     working_directory: ~/repo
 
@@ -27,14 +27,33 @@ jobs:
 
 
       # Step 4: run BD Detect
+      #- run:
+       #   name: run detect
+        #  command: |
+         #   bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=$HUB_URL \
+          #  --blackduck.api.token=$HUB_TOKEN \
+           # --blackduck.trust.cert=true \
+            #--logging.level.detect=DEBUG \
+            #--detect.cleanup=false \
+            #--detect.project.name=alex_cicd_tests \
+            #--detect.project.version.name=circleci1
+
+  bd_detect:
+    docker:
+      - image: rappdw/docker-java-python
+    
+    working_directory: ~/repo
+
+    steps:
       - run:
-          name: run detect
-          command: |
-            bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=$HUB_URL \
-            --blackduck.api.token=$HUB_TOKEN \
-            --blackduck.trust.cert=true \
+        name: run detect
+        command: |
+          bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=$HUB_URL \
+          --blackduck.api.token=$HUB_TOKEN \
+          --blackduck.trust.cert=true \
             --logging.level.detect=DEBUG \
             --detect.cleanup=false \
             --detect.project.name=alex_cicd_tests \
             --detect.project.version.name=circleci1
+
               
