@@ -22,7 +22,7 @@ jobs:
           name: run tests
           command: |
             . roman_venv1/bin/activate
-            flake8 --exclude=venv*,.git,__pycache__,roman_venv --statistics
+            flake8 --exclude=venv*,.git,__pycache__,roman_venv*, --statistics
             pytest -v
 
   
