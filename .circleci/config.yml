@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: rappdw/docker-java-python
+      - image: circleci/python:3.7
 
     working_directory: ~/repo
 
@@ -14,24 +14,42 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
+            python3 -m venv roman_venv1
+            . roman_venv1/bin/activate
             pip install -r requirements.txt
       # Step 3: run linter and tests
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
-            flake8 --exclude=venv*,.git,__pycache__,roman_venv --statistics
+            . roman_venv1/bin/activate
+            flake8 --exclude=venv*,.git,__pycache__,roman_venv*, --statistics
             pytest -v
-      # Step 4: run BD Detect
+
+  
+  # Detect job
+  bd_detect_scan:
+    docker:
+      - image: rappdw/docker-java-python
+    
+    working_directory: ~/repo
+
+    steps:
+      - checkout
       - run:
           name: run detect
           command: |
-            bash <(curl -s -L https://detect.synopsys.com/detect.sh) --blackduck.url=$HUB_URL \
+            bash <(curl -s -L https://detect.synopsys.com/detect7.sh) --blackduck.url=$HUB_URL \
             --blackduck.api.token=$HUB_TOKEN \
             --blackduck.trust.cert=true \
             --logging.level.detect=DEBUG \
             --detect.cleanup=false \
             --detect.project.name=alex_cicd_tests \
-            --detect.project.version.name=circleci3
+            --detect.project.version.name=circleci1_step1
+workflows:
+  version: 2
+  build_and_scan:
+    jobs:
+      - build
+      - bd_detect_scan
+
+              
