@@ -36,4 +36,4 @@ jobs:
             --detect.cleanup=false \
             --detect.project.name=alex_cicd_tests \
             --detect.tools=DETECTOR \
-            --detect.project.version.name=circleci1_detect7_step
+            --detect.project.version.name=DetectorOnly
