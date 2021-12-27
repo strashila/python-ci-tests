@@ -37,4 +37,4 @@ jobs:
             --detect.cleanup=false \
             --detect.project.name=alex_cicd_tests_circle-1 \
             --detect.tools=DETECTOR \
-            --detect.project.version.name=DetectorOnly-1
+            --detect.project.version.name=DetectorOnly-3-apscheduler
