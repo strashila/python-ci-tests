@@ -29,11 +29,12 @@ jobs:
       - run:
           name: run detect
           command: |
+            . venv/bin/activate
             bash <(curl -s -L https://detect.synopsys.com/detect7.sh) --blackduck.url=$HUB_URL \
             --blackduck.api.token=$HUB_TOKEN \
             --blackduck.trust.cert=true \
             --logging.level.detect=DEBUG \
             --detect.cleanup=false \
-            --detect.project.name=alex_cicd_tests \
+            --detect.project.name=alex_cicd_tests_circle-1 \
             --detect.tools=DETECTOR \
-            --detect.project.version.name=DetectorOnly
+            --detect.project.version.name=DetectorOnly-1
