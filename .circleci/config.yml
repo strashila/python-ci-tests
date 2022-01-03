@@ -36,6 +36,6 @@ jobs:
             --logging.level.detect=DEBUG \
             --detect.cleanup=false \
             --detect.project.name=alex_cicd_tests_circle-1 \
-            --detect.project.version.name=ToolsNotSpecified-2.2 \
-#           --detect.tools=DETECTOR
+            --detect.project.version.name=DetectorSigScan.1.1 \
+            --detect.tools=DETECTOR,SIGNATURE_SCAN
             
