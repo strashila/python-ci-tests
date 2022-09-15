@@ -6,4 +6,4 @@ env
 .coverage
 .vscode
 roman_venv
-manylib_venv
+*venv
