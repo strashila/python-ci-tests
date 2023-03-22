@@ -22,7 +22,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            flake8 --exclude=*venv*,.git,__pycache__,roman_venv --statistics
+            flake8 --exclude=venv,*venv*,.git,__pycache__,roman_venv --statistics
             pytest -v
 
       # Step 4: Deploy synopsys copilot
