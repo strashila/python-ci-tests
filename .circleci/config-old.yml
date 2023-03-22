@@ -22,13 +22,20 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            flake8 --exclude=*venv*,.git,__pycache__,roman_venv --statistics
+            flake8 --exclude=venv*,.git,__pycache__,roman_venv --statistics
             pytest -v
 
-      # Step 4: Deploy synopsys copilot
-      - deploy:
-          name: run synopsys copilot
+      # Step 4: run BD Detect
+      - run:
+          name: run detect
           command: |
-            bash <(curl -s https://copilot.blackducksoftware.com/ci/circle2/scripts/upload)
-
+            . venv/bin/activate
+            bash <(curl -s -L https://detect.synopsys.com/detect7.sh) --blackduck.url=$HUB_URL \
+            --blackduck.api.token=$HUB_TOKEN \
+            --blackduck.trust.cert=true \
+            --logging.level.detect=DEBUG \
+            --detect.cleanup=false \
+            --detect.project.name=alex_cicd_tests_circle-1 \
+            --detect.project.version.name=DetectorSigScan.1.1 \
+            --detect.tools=DETECTOR,IAC_SCAN
             
