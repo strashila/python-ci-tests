@@ -19,7 +19,7 @@ google-pasta==0.2.0
 grpcio==1.48.2
 h5py==3.1.0
 idna==3.4
-importlib-metadata==4.8.3
+importlib-metadata==4.8.3 #flake8 is very special and needs importlib < 5 to even work
 iniconfig==1.1.1
 keras==2.6.0
 Keras-Preprocessing==1.1.2
@@ -57,4 +57,3 @@ urllib3==1.26.15
 Werkzeug==2.0.3
 wrapt==1.12.1
 zipp==3.6.0
-importlib-metadata<5.0  #flake8 is very special and needs importlib < 5 to even work
