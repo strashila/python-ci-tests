@@ -12,4 +12,4 @@ pyparsing==2.4.7
 pytest==6.2.1
 pytest-cov==2.11.1
 toml==0.10.2
-importlib-metadata<5.0
+importlib-metadata<5.0 #flake8 is very special and needs importlib < 5 to even work
