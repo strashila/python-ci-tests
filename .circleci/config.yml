@@ -25,22 +25,10 @@ jobs:
             flake8 --exclude=venv,*venv*,.git,__pycache__,roman_venv,venv --statistics
             pytest -v
 
-      # Step 4: Deploy synopsys copilot
+      # Step 4: Deploy synopsys copilot blackduck copilot
       - deploy:
           name: run synopsys copilot
           command: |
-<<<<<<< HEAD
             bash <(curl -s https://copilot.blackducksoftware.com/ci/circle2/scripts/upload)
 
             
-=======
-            . venv/bin/activate
-            bash <(curl -s -L https://detect.synopsys.com/detect7.sh) --blackduck.url=$HUB_URL \
-            --blackduck.api.token=$HUB_TOKEN \
-            --blackduck.trust.cert=true \
-            --logging.level.detect=DEBUG \
-            --detect.cleanup=false \
-            --detect.project.name=alex_cicd_tests_circle-1 \
-            --detect.tools=DETECTOR \
-            --detect.project.version.name=DetectorOnly-3-apscheduler
->>>>>>> 6582766af2daf1a5db6af50f1f14be39be8196ee
