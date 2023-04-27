@@ -7,7 +7,6 @@ env
 .vscode
 roman_venv
 *venv*
-venv*
-venv
-*venv
+
+
 
